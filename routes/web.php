@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $greeting = "Welcome";
+    $text = "Laravel!";
+    $data = [
+        "sayhi" => $greeting,
+        "laravel" => $text,
+    ];
+    return view('home', $data);
+})-> name ("home");
+
+Route::get('/contacts', function () {
+    return view('contacts');
+})-> name("contacts");
